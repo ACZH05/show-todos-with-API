@@ -21,16 +21,23 @@ async function getUserInfo(userId) {
 }
 
 const userIdSelected = document.getElementById('userId')
+const completeSelected = document.getElementById('complete')
+const submit = document.getElementById('submit')
 const table = document.getElementById('displayUserInfo')
 
-userIdSelected.addEventListener("change", (e) => {
-  const userId = e.target.value
+
+submit.addEventListener("click", () => {
+  const userId = userIdSelected.value
+  const status = completeSelected.value
 
   for (let i = table.rows.length - 1; i > 0; i--) {
     table.deleteRow(i)
   }
 
-  userId === "" ? getUserInfo("") : getUserInfo(`?userId=${userId}`)
+  if (userId === "" && status === "") return getUserInfo("")
+  if (status === "") return getUserInfo(`?userId=${userId}`)
+  if (userId === "") return getUserInfo(`?completed=${status}`)
+  getUserInfo(`?userId=${userId}&completed=${status}`)
 })
 
 getUserInfo("")

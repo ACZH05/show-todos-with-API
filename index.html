@@ -16,7 +16,7 @@
 
 <body class="mx-4 my-4">
   <h1>To-Do App</h1>
-  <form class="d-inline-flex align-items-baseline my-3">
+  <div class="d-inline-flex align-items-baseline my-3">
     <label for="filter" class="fs-2">Filter by</label>
     <select name="filter" id="userId" class="form-select mx-4">
       <option value="">User ID</option>
@@ -38,8 +38,8 @@
       <option value="false">Not Complete</option>
     </select>
 
-    <button type="submit" class="btn btn-primary ms-4">Filter</button>
-  </form>
+    <button type="submit" class="btn btn-primary ms-4" id="submit">Filter</button>
+  </div>
 
   <table id="displayUserInfo" class="table">
     <thead class="px-1 text-center">
