@@ -16,25 +16,36 @@
 
 <body class="mx-4 my-4">
   <h1>To-Do App</h1>
-  <select name="id" id="userId" class="form-select btn-primary my-4">
-    <option value="">Filter by user ID</option>
-    <option value="1">User ID: 1</option>
-    <option value="2">User ID: 2</option>
-    <option value="3">User ID: 3</option>
-    <option value="4">User ID: 4</option>
-    <option value="5">User ID: 5</option>
-    <option value="6">User ID: 6</option>
-    <option value="7">User ID: 7</option>
-    <option value="8">User ID: 8</option>
-    <option value="9">User ID: 9</option>
-    <option value="10">User ID: 10</option>
-  </select>
+  <form class="d-inline-flex align-items-baseline my-3">
+    <label for="filter" class="fs-2">Filter by</label>
+    <select name="filter" id="userId" class="form-select mx-4">
+      <option value="">User ID</option>
+      <option value="1">User ID: 1</option>
+      <option value="2">User ID: 2</option>
+      <option value="3">User ID: 3</option>
+      <option value="4">User ID: 4</option>
+      <option value="5">User ID: 5</option>
+      <option value="6">User ID: 6</option>
+      <option value="7">User ID: 7</option>
+      <option value="8">User ID: 8</option>
+      <option value="9">User ID: 9</option>
+      <option value="10">User ID: 10</option>
+    </select>
+
+    <select name="filter" id="complete" class="form-select">
+      <option value="">Completing Status</option>
+      <option value="true">Completed</option>
+      <option value="false">Not Complete</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary ms-4">Filter</button>
+  </form>
 
   <table id="displayUserInfo" class="table">
     <thead class="px-1 text-center">
       <tr>
         <th>User ID</th>
-        <th>ID</th>
+        <th class="px-4">ID</th>
         <th>Title</th>
         <th>Completed</th>
       </tr>
