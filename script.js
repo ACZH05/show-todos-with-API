@@ -1,7 +1,6 @@
 async function getUserInfo(userId) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/todos${userId}`)
   const result = await response.json()
-  console.table(result)
 
 
   for (const task of result) {
@@ -12,9 +11,12 @@ async function getUserInfo(userId) {
     <td class="text-center">${task.userId}</td>
     <td class="text-center">${task.id}</td>
     <td>${task.title}</td>
-    <td class="text-center"><input type="checkbox"></td>
+    <td class="text-center"><input type="checkbox" id="status${task.id}" disabled></td>
     `
     table.appendChild(row)
+
+    const status = document.getElementById(`status${task.id}`)
+    status.checked = task.completed
   }
 }
 
